@@ -1,0 +1,53 @@
+{
+	"layers": {
+		"place":            { "minzoom":  0, "maxzoom": 18 },
+		"boundary":         { "minzoom":  0, "maxzoom": 18, "simplify_below": 12, "simplify_level": 0.0003, "simplify_ratio": 0, "simplify_algorithm": "visvalingam" },
+
+		"poi":              { "minzoom": 0, "maxzoom": 18 },
+		"poi_detail":       { "minzoom": 0, "maxzoom": 18, "write_to": "poi"},
+
+		"housenumber":      { "minzoom": 0, "maxzoom": 18 },
+
+		"waterway":         { "minzoom":  0,  "maxzoom": 18, "simplify_below": 12, "simplify_level": 0.0003, "simplify_ratio": 0 },
+		"waterway_detail":  { "minzoom": 0,  "maxzoom": 18, "write_to": "waterway" },
+
+		"transportation":             { "minzoom": 4,  "maxzoom": 18, "simplify_below": 13, "simplify_level": 0.0003 },
+		"transportation_name":        { "minzoom": 8,  "maxzoom": 18 },
+
+		"building":          { "minzoom": 0, "maxzoom": 18 },
+
+		"water":             { "minzoom": 0,  "maxzoom": 18, "simplify_below": 12, "simplify_level": 0.0003, "simplify_ratio": 0},
+		"ocean":             { "minzoom": 0,  "maxzoom": 18, "source": "coastline/water_polygons.shp", "filter_below": 12, "filter_area": 0.5, "simplify_below": 13, "simplify_level": 0.0001, "simplify_ratio": 0, "simplify_algorithm": "visvalingam", "write_to": "water" },
+		"water_name":        { "minzoom": 0, "maxzoom": 18 },
+		"water_name_detail": { "minzoom": 0, "maxzoom": 18, "write_to": "water_name" },
+
+		"aeroway":           { "minzoom": 0, "maxzoom": 18 },
+		"aerodrome_label":   { "minzoom": 0, "maxzoom": 18 },
+		"park":              { "minzoom": 0, "maxzoom": 18 },
+		"landuse":           { "minzoom":  0, "maxzoom": 18, "simplify_below": 13, "simplify_level": 0.0003, "simplify_ratio": 0 },
+		"urban_areas":       { "minzoom":  4, "maxzoom":  18, "source": "landcover/ne_10m_urban_areas/ne_10m_urban_areas.shp", "source_columns": ["featurecla"], "simplify_below": 7, "simplify_level": 0.0003, "simplify_ratio": 0, "write_to": "landuse" },
+		"landcover":         { "minzoom":  0, "maxzoom": 18, "simplify_below": 13, "simplify_level": 0.0003, "simplify_ratio": 0 },
+		"ice_shelf":         { "minzoom":  0, "maxzoom":  18, "source": "landcover/ne_10m_antarctic_ice_shelves_polys/ne_10m_antarctic_ice_shelves_polys.shp", "source_columns": ["featurecla"], "simplify_below": 13, "simplify_level": 0.0005, "write_to": "landcover" },
+		"glacier":           { "minzoom":  2, "maxzoom":  18, "source": "landcover/ne_10m_glaciated_areas/ne_10m_glaciated_areas.shp", "source_columns": ["featurecla"], "simplify_below": 13, "simplify_level": 0.0005, "write_to": "landcover" },
+		"mountain_peak":     { "minzoom": 0, "maxzoom": 18 }
+	},
+	"settings": {
+		"minzoom": 10,
+		"maxzoom": 18,
+		"basezoom": 18,
+		"include_ids": false,
+		"combine_below": 14,
+		"name": "Tilemaker to OpenMapTiles schema",
+		"version": "3.0",
+		"description": "Tile config based on OpenMapTiles schema",
+		"compress": "gzip",
+		"filemetadata": {
+			"tilejson": "2.0.0", 
+			"scheme": "xyz", 
+			"type": "baselayer", 
+			"format": "png", 
+            "tiles": ["https://example.com/liechtenstein/{z}/{x}/{y}.png"]
+		}
+	}
+}
+
